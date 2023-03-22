@@ -4,14 +4,10 @@ import lombok.Data;
 
 @Data
 public class MemberResponseDto {
-    public MemberResponseDto(String name, String company, String status, String message) {
-        this.name = name;
-        this.company = company;
-        this.status = status;
-        this.message = message;
+    public MemberResponseDto(SignUpRequestDto signUpRequestDto) {
+        this.nickName = signUpRequestDto.getNickName();
+        this.email = signUpRequestDto.getEmail();
     }
-    String name;
-    String company;
-    String status;
-    String message;
+    String nickName;
+    String email;
 }
